@@ -12,13 +12,14 @@ function addItem(e){
     e.preventDefault();
     
     var newItem = document.getElementById('item').value;
+    var descItem = document.getElementById('description').value;
 
 
     var li = document.createElement('li');
     
     li.className = 'list-group-item';
 
-    li.appendChild(document.createTextNode(newItem));
+    li.appendChild(document.createTextNode(newItem+" "+descItem));
 
     var deleteBtn = document.createElement('button');
     deleteBtn.type = "button";
