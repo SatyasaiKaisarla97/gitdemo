@@ -13,8 +13,8 @@ function addItem(e){
     
     var newItem = document.getElementById('item').value;
     var descItem = document.getElementById('description').value;
-
-
+    
+    localStorage.setItem('item', newItem);
     var li = document.createElement('li');
     
     li.className = 'list-group-item';
