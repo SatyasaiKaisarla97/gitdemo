@@ -11,4 +11,9 @@ for(i=0;i<=3;i++){
     r[i].style.fontWeight = "bold";
 }
 
+const q = getElementsByClassName("new-item");
+console.log(q)
+
+
+
 
