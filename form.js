@@ -7,7 +7,13 @@ function saveData(e){
     let name = document.querySelector('#name').value;
     let email = document.querySelector('#email').value;
     
-    localStorage.setItem(name,email);
+    let my_obj = {
+        "name": name, 
+        "email": email
+    };
+    
+    my_objSerialized = JSON.stringify(my_obj);
+    localStorage.setItem("user", my_objSerialized);
 
     document.getElementById('name').value = ' ';
     document.getElementById('email').value = ' ';
