@@ -20,12 +20,20 @@ function saveData(e){
     let details = name+' - '+email+' - '+phone;
     const li = document.createElement('li')
     const deleteBtn = document.createElement('input')
+    const editBtn = document.createElement('input')
+
     deleteBtn.type = 'button';
     deleteBtn.value = 'delete'
+
+    editBtn.type = 'button';
+    editBtn.value = 'edit';
+
+
     li.innerText = details;
     var ul = document.getElementById('user-list');
-    ul.appendChild(li)
-    li.appendChild(deleteBtn)
+    ul.appendChild(li);
+    li.appendChild(deleteBtn);
+    li.appendChild(editBtn);
 
     deleteBtn.addEventListener('click', removeData);
     function removeData(e){
@@ -35,8 +43,20 @@ function saveData(e){
         localStorage.removeItem(email);
     };
 
+    editBtn.addEventListener('click', editData);
+    function editData(e){
+        e.preventDefault();
+        document.getElementById('username').value = name;
+        document.getElementById('useremail').value = email;
+        document.getElementById('userphone').value = phone;
+        editBtn.parentElement.innerText = ' ';
+        li.style.listStyle='none';
+        localStorage.removeItem(email);
+    };
 
-    document.getElementById('username').value = ' ';
-    document.getElementById('useremail').value = ' ';
-    document.getElementById('userphone').value = ' ';
+
+
+    document.getElementById('username').value = null;
+    document.getElementById('useremail').value = null;
+    document.getElementById('userphone').value = null;
  }
