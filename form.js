@@ -13,7 +13,7 @@ function saveData(e){
     };
     
     my_objSerialized = JSON.stringify(my_obj);
-    localStorage.setItem("user", my_objSerialized);
+    localStorage.setItem(email, my_objSerialized);
 
     document.getElementById('name').value = ' ';
     document.getElementById('email').value = ' ';
