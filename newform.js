@@ -19,9 +19,21 @@ function saveData(e){
 
     let details = name+' - '+email+' - '+phone;
     const li = document.createElement('li')
+    const deleteBtn = document.createElement('input')
+    deleteBtn.type = 'button';
+    deleteBtn.value = 'delete'
     li.innerText = details;
     var ul = document.getElementById('user-list');
     ul.appendChild(li)
+    li.appendChild(deleteBtn)
+
+    deleteBtn.addEventListener('click', removeData);
+    function removeData(e){
+        e.preventDefault();
+        deleteBtn.parentElement.innerText = ' ';
+        li.style.listStyle='none';
+        localStorage.removeItem(email);
+    };
 
 
     document.getElementById('username').value = ' ';
